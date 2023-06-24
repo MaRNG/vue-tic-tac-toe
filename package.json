@@ -1,0 +1,40 @@
+{
+  "name": "vue-tic-tac-toe",
+  "version": "0.1.0",
+  "description": "Tic tac toe written in Vue3",
+  "scripts": {
+    "dev": "encore dev",
+    "dev-watch": "encore dev --watch",
+    "build": "encore production --progress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaRNG/vue-tic-tac-toe.git"
+  },
+  "keywords": [
+    "Vue3",
+    "Vue",
+    "TicTacToe",
+    "MiniProject"
+  ],
+  "author": "MaRNG",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MaRNG/vue-tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/MaRNG/vue-tic-tac-toe#readme",
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@symfony/webpack-encore": "^4.3.0",
+    "sass": "^1.63.6",
+    "sass-loader": "^13.3.2",
+    "ts-loader": "^9.4.3",
+    "typescript": "^5.1.3",
+    "vue": "^3.3.4",
+    "vue-loader": "^17.2.2",
+    "vue-template-compiler": "^2.7.14",
+    "webpack": "^5.88.0",
+    "webpack-notifier": "^1.15.0"
+  }
+}

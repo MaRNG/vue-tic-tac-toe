@@ -1,0 +1,12 @@
+{
+  "exclude": ["node_modules"],
+  "target": "ES5",
+  "module": "commonjs",
+  "lib": [
+    "dom"
+  ],
+  "strict": true,
+  "skipLibCheck": true,
+  "forceConsistentCasingInFileNames": true,
+  "resolveJsonModule": true
+}
