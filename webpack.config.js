@@ -12,6 +12,7 @@ Encore
     .setOutputPath('./public/build/')
     .setPublicPath('/build')
     .addEntry('app', './src/entry/app.ts')
+    .addEntry('page-scss', './src/entry/page.scss')
     .enableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
     .enableBuildNotifications()

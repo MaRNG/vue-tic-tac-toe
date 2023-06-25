@@ -3,7 +3,19 @@
     "app": {
       "js": [
         "/build/runtime.5e2cd9a2.js",
-        "/build/app.a40dab06.js"
+        "/build/app.139640ab.js"
+      ],
+      "css": [
+        "/build/app.19524757.css"
+      ]
+    },
+    "page-scss": {
+      "js": [
+        "/build/runtime.5e2cd9a2.js",
+        "/build/page-scss.4bee375c.js"
+      ],
+      "css": [
+        "/build/page-scss.1397ef82.css"
       ]
     }
   }

@@ -1,15 +1,24 @@
 <template>
-  <div>
-      <h1>Hello world!</h1>
+  <div class="game">
+      <GameBoard :game-config="gameConfig" />
   </div>
 </template>
 
 <script>
+import {GameConfig} from "../model/game/game-config";
+import GameBoard from "./game-board.vue";
+
 export default {
-    name: "game"
+    name: "game",
+    components: {GameBoard},
+    data: () => {
+        return {
+            gameConfig: new GameConfig(10, 5)
+        }
+    }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss" src="./../scss/game.scss">
 
 </style>
