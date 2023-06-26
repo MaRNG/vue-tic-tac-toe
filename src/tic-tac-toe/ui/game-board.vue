@@ -1,17 +1,25 @@
 <template>
   <div class="game-board">
-      <div class="row" v-for="row in matrix.cells">
-          <div class="cell" v-for="cell in row">
+      <div class="game-board__active" v-if="game !== null && game.getMatrix() !== null">
+          <div class="row" v-for="row in game.getMatrix().getCells()">
+              <div class="cell" v-for="cell in row" @click="playCell(cell)" :class="getCellClasses(cell)">
 
+              </div>
           </div>
+      </div>
+
+      <div class="game-board__loading" v-if="game === null || game.getMatrix() === null">
+
       </div>
   </div>
 </template>
 
 <script lang="ts">
-import {Matrix} from "../model/gameboard/matrix";
 import {PropType} from "vue";
 import {GameConfig} from "../model/game/game-config";
+import {Game} from "../model/game/game";
+import {Cell} from "../model/gameboard/cell";
+import {PlayerEnum} from "../model/player/player-enum";
 
 export default {
     name: "game-board",
@@ -23,12 +31,39 @@ export default {
     },
     data: () => {
         return {
-            matrix: null as Matrix|null
+            game: null as Game|null
         }
     },
     beforeMount() {
-        this.matrix = new Matrix(this.gameConfig.boardSize);
-    }
+        this.game = new Game(this.gameConfig);
+    },
+    methods: {
+        playCell(cell: Cell): void {
+            this.game.playCell(cell);
+        },
+        getCellClasses(cell: Cell): Array<string> {
+            let classes = [];
+
+            if (cell.isFilled()) {
+                classes.push('cell--active');
+
+                switch (cell.getFilledBy()) {
+                    case PlayerEnum.ONE:
+                        classes.push('cell--player-one');
+                        break;
+                    case PlayerEnum.TWO:
+                        classes.push('cell--player-two');
+                        break;
+                }
+            }
+
+            if (this.game.validPlayCell(cell) === false) {
+                classes.push('cell--not-valid');
+            }
+
+            return classes;
+        }
+    },
 }
 </script>
 

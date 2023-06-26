@@ -1,13 +1,23 @@
 import {Cell} from "./cell";
 
 export class Matrix {
-    public readonly cells: Array<Array<Cell>> = []
+    private cells: Array<Array<Cell>> = []
 
     constructor(public readonly size: number) {
-        for (let i = 0; i < size; i++) {
+        this.initCells();
+    }
+
+    public getCells(): Array<Array<Cell>> {
+        return this.cells;
+    }
+
+    private initCells(): void {
+        this.cells = [];
+
+        for (let i = 0; i < this.size; i++) {
             const row: Array<Cell> = [];
 
-            for (let j = 0; j < size; j++) {
+            for (let j = 0; j < this.size; j++) {
                 row.push(new Cell());
             }
 
