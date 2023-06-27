@@ -2,4 +2,15 @@
   padding: 30px;
   border-radius: 15px;
   background-color: #FFB703;
+
+  &__info {
+    .table {
+      background-color: #ededed;
+      width: 100%;
+      margin-bottom: 20px;
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+    }
+  }
 }

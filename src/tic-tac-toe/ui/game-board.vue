@@ -16,7 +16,6 @@
 
 <script lang="ts">
 import {PropType} from "vue";
-import {GameConfig} from "../model/game/game-config";
 import {Game} from "../model/game/game";
 import {Cell} from "../model/gameboard/cell";
 import {PlayerEnum} from "../model/player/player-enum";
@@ -24,18 +23,10 @@ import {PlayerEnum} from "../model/player/player-enum";
 export default {
     name: "game-board",
     props: {
-        gameConfig: {
-            type: Object as PropType<GameConfig>,
+        game: {
+            type: Object as PropType<Game>,
             required: true
         }
-    },
-    data: () => {
-        return {
-            game: null as Game|null
-        }
-    },
-    beforeMount() {
-        this.game = new Game(this.gameConfig);
     },
     methods: {
         playCell(cell: Cell): void {

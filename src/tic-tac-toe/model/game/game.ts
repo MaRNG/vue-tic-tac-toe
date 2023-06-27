@@ -6,6 +6,7 @@ import {PlayerEnum} from "../player/player-enum";
 export class Game {
     private matrix: Matrix|null = null;
     private playerRound: PlayerEnum = PlayerEnum.ONE;
+    private winner: PlayerEnum = null;
 
     constructor(private readonly gameConfig: GameConfig) {
         this.reset();
@@ -33,8 +34,13 @@ export class Game {
         return this.playerRound;
     }
 
+    public getWinner(): PlayerEnum|null {
+        return this.winner;
+    }
+
     private _playCell(cell: Cell): void {
         cell.fill(this.playerRound);
+        this._checkWinner();
         this._switchPlayer();
     }
 
@@ -44,5 +50,11 @@ export class Game {
         } else {
             this.playerRound = PlayerEnum.ONE;
         }
+    }
+
+    private _checkWinner(): void {
+        /**
+         * TODO using DFS/BFS to check winner
+         */
     }
 }
