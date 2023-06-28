@@ -13,4 +13,21 @@
       text-align: center;
     }
   }
+
+  .button-start-again {
+    display: block;
+    width: 100%;
+    background: #043e60;
+    color: #ebebeb;
+    padding: 10px 0;
+    margin-top: 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.25s;
+
+    &:hover, &:focus {
+      box-shadow: inset 400px 0 0 0 #171717;
+      border-color: #171717;
+    }
+  }
 }

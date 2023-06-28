@@ -3,10 +3,10 @@
     "app": {
       "js": [
         "/build/runtime.5e2cd9a2.js",
-        "/build/app.30eded97.js"
+        "/build/app.0cc2a0e7.js"
       ],
       "css": [
-        "/build/app.47bd7963.css"
+        "/build/app.dbd25b2c.css"
       ]
     },
     "page-scss": {
@@ -15,7 +15,7 @@
         "/build/page-scss.4bee375c.js"
       ],
       "css": [
-        "/build/page-scss.1397ef82.css"
+        "/build/page-scss.ee3ec892.css"
       ]
     }
   }

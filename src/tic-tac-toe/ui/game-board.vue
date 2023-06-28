@@ -1,5 +1,5 @@
 <template>
-  <div class="game-board">
+  <div class="game-board" :class="{ 'game-board--alive': game !== null && game.getWinner() === null }">
       <div class="game-board__active" v-if="game !== null && game.getMatrix() !== null">
           <div class="row" v-for="row in game.getMatrix().getCells()">
               <div class="cell" v-for="cell in row" @click="playCell(cell)" :class="getCellClasses(cell)">
@@ -51,6 +51,12 @@ export default {
             if (this.game.validPlayCell(cell) === false) {
                 classes.push('cell--not-valid');
             }
+
+            this.game.getWinnerCells().forEach((winnerCell) => {
+                if (winnerCell === cell) {
+                    classes.push('cell--win');
+                }
+            });
 
             return classes;
         }

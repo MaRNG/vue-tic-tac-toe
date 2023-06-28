@@ -4,6 +4,9 @@ export class Cell {
     private filled: boolean = false;
     private filledBy: PlayerEnum | null = null;
 
+    constructor(public readonly posX, public readonly posY) {
+    }
+
     public fill(player: PlayerEnum): void {
         this.filled = true;
         this.filledBy = player;

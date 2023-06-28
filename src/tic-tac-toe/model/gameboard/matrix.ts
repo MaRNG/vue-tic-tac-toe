@@ -7,6 +7,14 @@ export class Matrix {
         this.initCells();
     }
 
+    public getCell(posX: number, posY: number): Cell|null {
+        if (posX >= 0 && posY >= 0 && posX < this.size && posY < this.size) {
+            return this.cells[posY][posX];
+        }
+
+        return null;
+    }
+
     public getCells(): Array<Array<Cell>> {
         return this.cells;
     }
@@ -18,7 +26,7 @@ export class Matrix {
             const row: Array<Cell> = [];
 
             for (let j = 0; j < this.size; j++) {
-                row.push(new Cell());
+                row.push(new Cell(j, i));
             }
 
             this.cells.push(row);

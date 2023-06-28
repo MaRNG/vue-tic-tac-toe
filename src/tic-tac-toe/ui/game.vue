@@ -16,9 +16,12 @@
                   </td>
               </tr>
           </table>
+
       </div>
 
       <GameBoard :game="game" />
+
+      <a role="button" @click="startAgain" class="button-start-again">Start again!</a>
   </div>
 </template>
 
@@ -40,6 +43,11 @@ export default {
         this.gameConfig = new GameConfig(10, 5);
         this.game = new Game(this.gameConfig);
     },
+    methods: {
+        startAgain(): void {
+            this.game.reset();
+        }
+    }
 }
 </script>
 
