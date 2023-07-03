@@ -4,7 +4,9 @@
           <table class="table">
               <tr>
                   <td>Player round:</td>
-                  <td>{{ game.getPlayerRound().toString() }}</td>
+                  <td>
+                      <span class="player-symbol" :class="getPlayerInfoClasses(game.getPlayerRound())"></span>
+                  </td>
               </tr>
               <tr>
                   <td>Winner:</td>
@@ -12,7 +14,7 @@
                       no one
                   </td>
                   <td v-if="game.getWinner() !== null">
-                      {{ game.getWinner().toString() }}
+                      <span class="player-symbol" :class="getPlayerInfoClasses(game.getWinner())"></span>
                   </td>
               </tr>
           </table>
@@ -29,6 +31,7 @@
 import {GameConfig} from "../model/game/game-config";
 import GameBoard from "./game-board.vue";
 import {Game} from "../model/game/game";
+import {PlayerEnum} from "../model/player/player-enum";
 
 export default {
     name: "game",
@@ -46,6 +49,17 @@ export default {
     methods: {
         startAgain(): void {
             this.game.reset();
+        },
+        getPlayerInfoClasses(player: PlayerEnum): Array<string> {
+            const classes: Array<string> = [];
+
+            if (player === PlayerEnum.ONE) {
+                classes.push('player-one');
+            } else {
+                classes.push('player-two');
+            }
+
+            return classes;
         }
     }
 }

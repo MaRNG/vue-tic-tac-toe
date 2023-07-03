@@ -1,3 +1,5 @@
+@import "./util/game-symbols";
+
 .game {
   padding: 30px;
   border-radius: 15px;
@@ -11,6 +13,23 @@
       border-radius: 15px;
       padding: 25px;
       text-align: center;
+
+      .player-symbol {
+        &.player-one, &.player-two {
+          position: relative;
+          margin: 0 auto;
+          width: 30px;
+          height: 30px;
+        }
+
+        &.player-one {
+          @include o-symbol;
+        }
+
+        &.player-two {
+          @include x-symbol;
+        }
+      }
     }
   }
 
