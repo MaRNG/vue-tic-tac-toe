@@ -1,51 +1,90 @@
 @import "./util/game-symbols";
 
-.game {
-  padding: 30px;
-  border-radius: 15px;
-  background-color: #FFB703;
+.game-wrapper {
+  .game-setup {
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #FFB703;
 
-  &__info {
-    .table {
-      background-color: #ededed;
-      width: 100%;
-      margin-bottom: 20px;
-      border-radius: 15px;
-      padding: 25px;
-      text-align: center;
+    &__error-list {
+      display: flex;
+      flex-flow: column;
+      gap: 5px;
+      width: 400px;
+      margin-bottom: 25px;
 
-      .player-symbol {
-        &.player-one, &.player-two {
-          position: relative;
-          margin: 0 auto;
-          width: 30px;
-          height: 30px;
-        }
+      .item {
+        color: #e52424;
+      }
+    }
 
-        &.player-one {
-          @include o-symbol;
-        }
+    &__form {
+      display: flex;
+      flex-flow: column;
+      gap: 5px;
 
-        &.player-two {
-          @include x-symbol;
-        }
+      .label {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .button--game-setup-submit {
+        margin-top: 20px;
       }
     }
   }
 
-  .button-start-again {
+  .game {
+    padding: 30px;
+    border-radius: 15px;
+    background-color: #FFB703;
+
+    &__info {
+      .table {
+        background-color: #ededed;
+        width: 100%;
+        margin-bottom: 20px;
+        border-radius: 15px;
+        padding: 25px;
+        text-align: center;
+
+        .player-symbol {
+          &.player-one, &.player-two {
+            position: relative;
+            margin: 0 auto;
+            width: 30px;
+            height: 30px;
+          }
+
+          &.player-one {
+            @include o-symbol;
+          }
+
+          &.player-two {
+            @include x-symbol;
+          }
+        }
+      }
+    }
+
+    .button--start-again {
+      margin-top: 20px;
+    }
+  }
+
+  .button {
     display: block;
     width: 100%;
     background: #043e60;
     color: #ebebeb;
     padding: 10px 0;
-    margin-top: 20px;
     cursor: pointer;
     text-align: center;
     transition: 0.25s;
 
     &:hover, &:focus {
-      box-shadow: inset 400px 0 0 0 #171717;
+      box-shadow: inset 100vw 0 0 0 #171717;
       border-color: #171717;
     }
   }
